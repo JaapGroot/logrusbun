@@ -147,7 +147,7 @@ func eventOperation(event *bun.QueryEvent) string {
 	case *bun.DropTableQuery:
 		return "DROP TABLE"
 	}
-	return queryOperation(event.Query)
+	return queryOperation([]byte(event.Query))
 }
 
 // taken from bun
